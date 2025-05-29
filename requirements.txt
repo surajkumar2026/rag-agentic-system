@@ -1,0 +1,16 @@
+langchain 
+faiss-cpu 
+
+pdfplumber 
+pymupdf 
+pytesseract 
+
+transformers
+sentence-transformers
+streamlit 
+google-generativeai
+langchain_google_genai
+python-dotenv
+langchain-community
+langgraph
+
