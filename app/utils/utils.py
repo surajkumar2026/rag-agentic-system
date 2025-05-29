@@ -61,6 +61,17 @@ def extract_text_image(file) -> str:
         return ""
 
 
+def extract_text_image(file) -> str:
+    try:
+        # Use pytesseract to extract text from image
+        image = Image.open(file)
+        text = pytesseract.image_to_string(image)
+        return text.strip()
+    except Exception as e:
+        print(f"Error extracting text from image: {e}")
+        return ""
+
+
 
 def chunk_text(text: str , source: Optional[str] = None) -> list:
     text_splitter = RecursiveCharacterTextSplitter(
@@ -86,7 +97,7 @@ def extract_text_from_pdf(pdf_path: str) -> str:
         print(f"Unsupported file type: {mine_type}")
         return ""
 
-import os
+
 
 def save_file_to_data(file, file_name: str) -> str:
    
@@ -103,11 +114,7 @@ def save_file_to_data(file, file_name: str) -> str:
 
 
     
-if __name__ == "__main__":
-    text= extract_text_from_pdf("data/mach_resume.pdf")
-  
-    text_chunk= chunk_text(text)
-    print(text_chunk)
+
       
 
 
